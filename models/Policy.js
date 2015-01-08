@@ -1,6 +1,7 @@
 var mongoose = require('mongoose');
 
 var policySchema = new mongoose.Schema({
+		account: { type : mongoose.Schema.ObjectId, ref : 'Account' },
 		policyText: String,
 		policyUrl: String,
 		isActive: Boolean,

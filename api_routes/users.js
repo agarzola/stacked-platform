@@ -3,4 +3,4 @@ var User = require('../models/User'),
 	express = require('express');
 
 
-module.exports = routes("users", User);
+module.exports = routes("users", User, "account");

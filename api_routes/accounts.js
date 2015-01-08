@@ -4,4 +4,4 @@ var Account = require('../models/Account'),
 
 
 
-module.exports = routes("accounts", Account, "name owner type members isActive createdAt");
+module.exports = routes("accounts", Account, "owner");

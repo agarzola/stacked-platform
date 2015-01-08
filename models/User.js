@@ -9,13 +9,18 @@ var mongoose = require('mongoose');
 var userSchema = new mongoose.Schema({
 	email: { type: String, unique: true, lowercase: true },
 	password: String,
+	role: String,
+	account: { type : mongoose.Schema.ObjectId, ref : 'Account' },
 
 	facebook: String,
+	facebookDisplay: String,
 	twitter: String,
-	google: String,
-	github: String,
+	twitterDisplay: String,
+	//google: String,
+	//github: String,
 	instagram: String,
-	linkedin: String,
+	instagramDisplay: String,
+	//linkedin: String,
 	tokens: Array,
 
 	profile: {
@@ -29,6 +34,7 @@ var userSchema = new mongoose.Schema({
 	resetPasswordToken: String,
 	resetPasswordExpires: Date
 });
+
 
 /**
 	* Password hashing Mongoose middleware.
