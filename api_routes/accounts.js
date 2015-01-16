@@ -4,4 +4,4 @@ var Account = require('../models/Account'),
 
 
 
-module.exports = routes("policies", Account, "owner members");
+module.exports = routes("accounts", Account, "owner members");
