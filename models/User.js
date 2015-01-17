@@ -9,11 +9,14 @@ var userSchema = new mongoose.Schema({
 	account: { type : mongoose.Schema.ObjectId, ref : 'Account' },
 
 	facebook: String,
+	facebookDisplay: String,
 	twitter: String,
-	google: String,
-	github: String,
+	twitterDisplay: String,
+	//google: String,
+	//github: String,
 	instagram: String,
-	linkedin: String,
+	instagramDisplay: String,
+	//linkedin: String,
 	tokens: Array,
 
 	profile: {
