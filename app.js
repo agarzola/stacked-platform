@@ -63,7 +63,7 @@ app.listen(app.get('port'), function() {
 /* node scheduler for retriving social data  */
 /*********************************************/
 setInterval(function(){
-	console.log('Social Sync Start at:' + utils.getDateTime());
+	// console.log('Social Sync Start at:' + utils.getDateTime());
 	//socialIntegracion.process();
 }, infoConfig.timeProcess);
 /*********************************************/
