@@ -3,7 +3,7 @@ var	express = require('express'),
 
 
 /*- GET Routes -*/
-var get_route = function(route_path, coll, populates){
+var get_route = function(route_path, coll, populates, specialMethods){
 
 	//GET
 	router.route('/' + route_path)
@@ -139,7 +139,7 @@ var get_route = function(route_path, coll, populates){
 
 
 module.exports = {
-	route: function(route_path, coll, populates){
-		return get_route(route_path, coll, populates);
+	route: function(route_path, coll, populates, specialMethods){
+		return get_route(route_path, coll, populates, specialMethods);
 	}
 };
