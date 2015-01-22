@@ -64,7 +64,16 @@ var get_route = function(route_path, coll, populates, specialMethods){
 							return res.send(err);
 					}
 
-					res.json(item);
+					if (specialMethods.getId) {
+						specialMethods.getId(item, function (err, item) {
+							if (err) {
+								return res.send(err);
+							}
+							res.json(item);
+						});
+					} else {
+						res.json(item);
+					}
 				});
 		}
 	})
