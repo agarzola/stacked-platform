@@ -2,13 +2,16 @@ var mongoose = require('mongoose');
 
 var cachedPostsSchema = new mongoose.Schema({
   userId: String,
-  last: {
-    timestamp: String,
-    twitter: String,
-    facebook: String,
-    instagram: String
+  source: {
+    network: String,
+    data: Object
   },
-  posts: { type: Array, default: [] }
+  content: {
+    text: String,
+    img: String
+  },
+  permalink: String,
+  timestamp: String
 });
 
 module.exports = mongoose.model('CachedPosts', cachedPostsSchema);
