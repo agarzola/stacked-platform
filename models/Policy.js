@@ -6,10 +6,10 @@ var policySchema = new mongoose.Schema({
 		isActive: Boolean,
 		createdAt: Date,
 		group: { type : mongoose.Schema.ObjectId, ref : 'Group' },
-		coach: { type : mongoose.Schema.ObjectId, ref : 'User' },
+		account: { type : mongoose.Schema.ObjectId, ref : 'User' },
 		gender: { type : mongoose.Schema.ObjectId, ref : 'Gender' },
 		keywords: [{ type : mongoose.Schema.ObjectId, ref : 'Keyword' }],
-		members: [{ type : mongoose.Schema.ObjectId, ref : 'PolicyEmail' }]
+		confirmedMembers: [{ type : mongoose.Schema.ObjectId, ref : 'User' }]
 });
 
 module.exports = mongoose.model('Policy', policySchema);
