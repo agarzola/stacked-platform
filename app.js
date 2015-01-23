@@ -10,7 +10,7 @@ var express = require('express'),
 // Internal dependencies.
 // =============================================================================
 var utils = require('./utils.js'),
-	secrets = require('./config/secrets'),
+	secrets = require('./config/credentials/secrets'),
 	db = require('./db.js'),
 	infoConfig = require("./config/info.json"),
 	socialIntegracion = require("./social_integration/process.js");

@@ -1,7 +1,7 @@
 var session = require('express-session'),
 	MongoStore = require('connect-mongo')(session),
 	mongoose = require('mongoose'),
-	secrets = require('./config/secrets');
+	secrets = require('./config/credentials/secrets');
 
 
 mongoose.connect(secrets.db);

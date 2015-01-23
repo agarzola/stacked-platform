@@ -1,5 +1,5 @@
 var ig_api = require('instagram-node').instagram();
-	secrets = require('../../config/secrets');
+	secrets = require('../../config/credentials/secrets');
 
 
 exports.api_result = function() {
