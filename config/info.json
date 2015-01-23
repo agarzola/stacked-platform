@@ -4,6 +4,7 @@
 	"dateFormat": "mm/dd/yyyy",
 	"decimalPlaces": 2,
 	"timeProcess": 30000,
+	"cacheThreshold": 300000,
 	"instagram": {
 		"media_recent": {
 			"instagramUserId": "user.id",
