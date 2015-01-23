@@ -19,6 +19,8 @@ var userSchema = new mongoose.Schema({
 	//linkedin: String,
 	tokens: Array,
 	posts: Array,
+	last: Object,
+	policies: Array,
 
 	profile: {
 		name: { type: String, default: '' },
