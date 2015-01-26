@@ -119,35 +119,31 @@ var get_route = function(route_path, coll, populates, specialMethods){
 		.get(function(req, res) {
 			if(populates)
 			{
-					coll.findOne({ _id: req.params.id}, function(err, item) {
-						if (err) {
-								return res.send(err);
-						}
+				coll.findOne({ _id: req.params.id}, function(err, item) {
+					if (err) {
+							return res.send(err);
+					}
 
-						specialMethods.getIdPosts(item, function (err, posts) {
-							if (err) {
-								return res.send(err);
-							}
-							res.json(posts);
-						});
-					}).populate(populates);
-			} else {
-					coll.findOne({ _id: req.params.id}, function(err, item) {
+					specialMethods.getIdPosts(item, function (err, modifiedItem) {
 						if (err) {
-								return res.send(err);
+							return res.send(err);
 						}
-
-						if (specialMethods.getId) {
-							specialMethods.getIdPosts(item, function (err, item) {
-								if (err) {
-									return res.send(err);
-								}
-								res.json(item);
-							});
-						} else {
-							res.json(item);
-						}
+						res.json(modifiedItem);
 					});
+				}).populate(populates);
+			} else {
+				coll.findOne({ _id: req.params.id}, function(err, item) {
+					if (err) {
+							return res.send(err);
+					}
+
+					specialMethods.getIdPosts(item, function (err, modifiedItem) {
+						if (err) {
+							return res.send(err);
+						}
+						res.json(modifiedItem);
+					});
+				});
 			}
 		});
 	}
