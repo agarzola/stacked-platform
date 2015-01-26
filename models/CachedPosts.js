@@ -11,7 +11,9 @@ var cachedPostsSchema = new mongoose.Schema({
     img: String
   },
   permalink: String,
-  timestamp: Date
+  timestamp: Date,
+  flagged: Boolean,
+  flags: Array
 });
 
 module.exports = mongoose.model('CachedPosts', cachedPostsSchema);

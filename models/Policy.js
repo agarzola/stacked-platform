@@ -10,7 +10,8 @@ var policySchema = new mongoose.Schema({
 		gender: { type : mongoose.Schema.ObjectId, ref : 'Gender' },
 		keywords: [{ type : mongoose.Schema.ObjectId, ref : 'Keyword' }],
 		confirmedMembers: [{ type : mongoose.Schema.ObjectId, ref : 'User' }],
-    posts: Array
+    posts: Array,
+    flags: Array
 });
 
 module.exports = mongoose.model('Policy', policySchema);
