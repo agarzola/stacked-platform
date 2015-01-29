@@ -18,7 +18,6 @@ var userSchema = new mongoose.Schema({
 	instagramDisplay: String,
 	//linkedin: String,
 	tokens: Array,
-	posts: Array,
 	last: Object,
 	policies: Array,
 
